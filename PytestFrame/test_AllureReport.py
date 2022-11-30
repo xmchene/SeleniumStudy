@@ -8,11 +8,13 @@ import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 @allure.feature("测试百度模块")
 class TestSearch:
     @pytest.fixture(scope='function', autouse=True)
     def open_baidu(self):
         """打开百度"""
+        self.bs = webdriver.Chrome('/Users/chenxiangming/Desktop/tools/chromedriver')
         self.bs = webdriver.Chrome('/Users/chenxiangming/Desktop/tools/chromedriver')
 
     @allure.story("搜索selenium结果用例")
